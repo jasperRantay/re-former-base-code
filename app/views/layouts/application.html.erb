@@ -11,7 +11,14 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
+
+    <header>
+    
+      <%= link_to "Sign_up", signup_path%>
+    
+    </header>
+
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>

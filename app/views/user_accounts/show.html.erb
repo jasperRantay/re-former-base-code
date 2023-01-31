@@ -1,0 +1,7 @@
+
+
+<h1><%= @userAcc.name%></h1>
+<h2><%= mail_to(@userAcc.email)%></h2>
+<div>
+    <%= link_to "Edit Account", edit_user_account_path(@userAcc)%>
+</div>
