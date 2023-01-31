@@ -37,7 +37,7 @@
     margin-bottom: 6px;
  }
 
- form input[type="submit"]{
+ form input[type="submit"], input[type="password"]{
     padding: 8px;
     margin: 8px 0;
     background-color: transparent;
