@@ -1,10 +1,16 @@
-<h1><%= pluralize(@userAccs.size, "User")%></h1>
-<ul>
+
+
+<div class="container">
+  <div class="article_title">
+    <h1><%= pluralize(@userAccs.size, "User")%></h1>
+  </div>
+  
     <% @userAccs.each do |user|%>
-    <li>
-        <%= link_to user.name, user%>
-        created
-        <%= time_ago_in_words(user.created_at) %> ago
-    </li>
+    <div class="article_body">
+      <%= link_to user.name, user%>
+        created <%= time_ago_in_words(user.created_at) %> ago
+    </div>
     <% end%>
-</ul>
+ </ul>
+
+</div>

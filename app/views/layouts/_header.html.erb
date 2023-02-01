@@ -1,7 +1,27 @@
 <header>
-
-    <nav>
-        
-    </nav>
-
+      <nav class="main_nav">
+      <div>
+        <div class="logo"></div>
+        <%#= link_to "Show", %>
+      </div>
+      <ul class="nav_items">
+        <% if current_user%>
+        <li class="nav_liks">
+            <%= link_to current_user.name, current_user%>
+        </li>
+        <li class="nav_liks">
+            <%= link_to "Sign Out", session_path,
+                                   data: {
+                                      turbo_method: :delete
+                                    }%>
+                  
+        </li>
+        <% else%>
+        <li class="nav_liks">
+          <%= link_to "Sign Up", signup_path, class: "button success"%>
+          <%= link_to "Sign In", new_session_path, class: "button success"%>
+        </li>
+        <% end%>
+      </ul>
+      </nav>
 </header>

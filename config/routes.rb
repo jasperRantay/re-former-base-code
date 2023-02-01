@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 
-  resources :users
+ # resources :users
+
+  resource :session, only: [:new, :create, :destroy]
 
   resources :user_accounts
   get "signup" => "user_accounts#new"
+
+
 end

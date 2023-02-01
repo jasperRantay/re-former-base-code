@@ -12,14 +12,22 @@
 
   <body>
 
-    <header>
     
-      <%= link_to "Sign_up", signup_path%>
-    
-    </header>
+      <%= render "layouts/header"%>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <% flash.each do |type, msg| %>
+        <% if notice%>
+        <div class="notices">
+          <%= msg %>      
+        </div>
+        <% else%>
+         <div class="alerts">
+          <%= msg %>      
+        </div>
+        <% end%>
+      <% end %>
+     
+    <%# end%>
     <%= yield %>
   </body>
 </html>

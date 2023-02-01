@@ -1,7 +1,19 @@
 
-
-<h1><%= @userAcc.name%></h1>
-<h2><%= mail_to(@userAcc.email)%></h2>
-<div>
-    <%= link_to "Edit Account", edit_user_account_path(@userAcc)%>
+<div class="container">
+  <div class="article_body">
+    <h1><%= @userAcc.name%></h1>
+    <h2><%= mail_to(@userAcc.email)%></h2>
+    <% if current_user?(@userAcc)%>
+    <div>
+        <%= link_to "Edit Account", edit_user_account_path(@userAcc)%>
+        <%= link_to "Delete", user_account_path,
+                                   data: {
+                                      turbo_method: :delete,
+                                      turbo_confirm: "Are you sure?"
+                                    }%>
+                  
+        <%# EDITING ACCC CONTINUE TOMM %>
+    </div>
+    <% end%>
+  </div>
 </div>

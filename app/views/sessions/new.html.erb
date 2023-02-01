@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="article_header">
+    <h1>Sign In</h1>
+  </div>
+
+    <div class="container">
+        <%= form_with(url: session_path, local: true) do |f|%>
+            <%= f.label:email%>
+            <%= f.text_field:email, autofocus: true%>
+            
+            <%= f.label:password%>
+            <%= f.password_field:password%>
+
+            <%= f.submit "Sign In", class: "button success"%>
+        <% end%>
+    </div>
+
+</div>
